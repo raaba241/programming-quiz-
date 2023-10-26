@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    color: rgb(255, 0, 140);
+}
+
+body {
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+#timer{
+    color: black
+}
+
