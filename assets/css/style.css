@@ -14,3 +14,24 @@ body {
     color: black
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 9rem;
+}
+
+button {
+    background-color: purple;
+    color: white;
+    width: 10rem;
+    height: 2rem;
+    border: 0rem;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(74, 8, 131);
+    cursor: pointer;
+}
