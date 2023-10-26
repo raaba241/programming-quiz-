@@ -81,13 +81,44 @@ function quizLoader() {
     answerEl.innerHTML =
       "<button id='answer1'></button><button id='answer2'></button><button id='answer3'></button><button id='answer4'></button>";
     var a_ans = document.getElementById("answer1");
+
     a_ans.innerText = quizQNA[questionCounter].a;
-    var b_ans = document.getElementById("answer2");
+    a_ans.className = "answers-button";
+    a_ans.style.width = "25rem";
+    a_ans.style.height = "5rem";
+    a_ans.style.display = "flex"
+    a_ans.style.alignItems = "center"
+  
+    var b_ans = document.getElementById("answer2");4
     b_ans.innerText = quizQNA[questionCounter].b;
+    b_ans.className = "answers-button";
+    b_ans.style.width = "25rem";
+    b_ans.style.height = "5rem";
+    b_ans.style.display = "flex"
+    b_ans.style.alignItems = "center"
+   
+
+
     var c_ans = document.getElementById("answer3");
     c_ans.innerText = quizQNA[questionCounter].c;
+    c_ans.className = "answers-button";
+    c_ans.style.width = "25rem";
+    c_ans.style.height = "5rem";
+    c_ans.style.display = "flex"
+    c_ans.style.alignItems = "center"
+    
+
+
     var d_ans = document.getElementById("answer4");
     d_ans.innerText = quizQNA[questionCounter].d;
+    d_ans.className = "answers-button";
+    d_ans.style.width = "25rem";
+    d_ans.style.height = "5rem";
+    d_ans.style.display = "flex"
+    d_ans.style.alignItems = "center"
+    
+
+   
 
     // if a button is clicked, it'll move on to the next question
 
@@ -122,9 +153,9 @@ function quizLoader() {
       } else console.log("you're wrong");
       questionCounter++;
       quizLoader();
-    })
-  } else{
-    questionEl.innerText = "Done!"
-    answerEl.innerHTML = points + "/50" 
+    });
+  } else {
+    questionEl.innerText = "Done!";
+    answerEl.innerHTML = points + "/50";
   }
 }
