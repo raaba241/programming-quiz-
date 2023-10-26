@@ -42,15 +42,6 @@ var quizQNA = [
         d: "4. console.log",
         correct: 'd'
         
-    },
-    {
-        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-        a: "1. JavaScript",
-        b: "2. terminal/bash",
-        c: "3. for loops",
-        d: "4. console.log",
-        correct: 'd'
-        
     }
 ]
 
@@ -63,10 +54,47 @@ var paraEl = document.getElementById("info")
 
 // function that occurs after pressing start button 
 startButtonEl.addEventListener('click', function(){ 
-    questionEl.innerHTML = quizQNA[questionCounter].question;
-    paraEl.innerHTML = "";
-    answerEl.innerHTML = "<button>Hi</button><button>Hi</button><button>Hi</button>";
-    questionCounter++;
+  quizLoader()
 }); 
 
 
+var timerS = 75
+// Loads the quiz
+
+function quizLoader (){
+    // If counter is less than the amount of questions, it'll create new elements in html and assign the values according to the counter
+
+    if (questionCounter < quizQNA.length){
+        questionEl.innerHTML = quizQNA[questionCounter].question;
+        paraEl.innerHTML = "";
+        answerEl.innerHTML = "<button id='answer1'></button><button id='answer2'></button><button id='answer3'></button><button id='answer4'></button>";
+        var a_ans = document.getElementById ("answer1")
+        a_ans.innerText = quizQNA[questionCounter].a
+        var b_ans = document.getElementById ("answer2")
+        b_ans.innerText = quizQNA[questionCounter].b
+        var c_ans = document.getElementById ("answer3")
+        c_ans.innerText = quizQNA[questionCounter].c
+        var d_ans = document.getElementById ("answer4")
+        d_ans.innerText = quizQNA[questionCounter].d
+        
+        // if a button is clicked, it'll move on to the next question
+        
+        a_ans.addEventListener('click',function(){
+            questionCounter++;
+            quizLoader();
+        })
+        b_ans.addEventListener('click',function(){
+            questionCounter++;
+            quizLoader();
+        })
+        c_ans.addEventListener('click',function(){
+            questionCounter++;
+            quizLoader();
+        })
+        d_ans.addEventListener('click',function(){
+            questionCounter++;
+            quizLoader();
+        })
+    }     
+
+}
