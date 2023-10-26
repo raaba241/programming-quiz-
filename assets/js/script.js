@@ -51,14 +51,18 @@ var questionEl = document.getElementById("question");
 var questionCounter = 0;
 var answerEl = document.getElementById("answers");
 var paraEl = document.getElementById("info")
+var maxTime = 75;
 
 // function that occurs after pressing start button 
 startButtonEl.addEventListener('click', function(){ 
   quizLoader()
+  setInterval(() => {
+    maxTime--;
+    timerEl.innerText = maxTime;
+  }, 1000);
 }); 
 
 
-var timerS = 75
 // Loads the quiz
 
 function quizLoader (){
@@ -78,7 +82,7 @@ function quizLoader (){
         d_ans.innerText = quizQNA[questionCounter].d
         
         // if a button is clicked, it'll move on to the next question
-        
+
         a_ans.addEventListener('click',function(){
             questionCounter++;
             quizLoader();
