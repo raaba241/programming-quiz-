@@ -51,6 +51,7 @@ var questionCounter = 0;
 var answerEl = document.getElementById("answers");
 var paraEl = document.getElementById("info");
 var maxTime = 75;
+var points = 0;
 
 // function that occurs after pressing start button
 startButtonEl.addEventListener("click", function () {
@@ -93,6 +94,7 @@ function quizLoader() {
     a_ans.addEventListener("click", function () {
       if (a_ans.innerText === quizQNA[questionCounter].correct) {
         console.log("you did it");
+        points += 10;
       } else console.log("you're wrong");
       questionCounter++;
       quizLoader();
@@ -100,6 +102,7 @@ function quizLoader() {
     b_ans.addEventListener("click", function () {
       if (b_ans.innerText === quizQNA[questionCounter].correct) {
         console.log("you did it");
+        points += 10;
       } else console.log("you're wrong");
       questionCounter++;
       quizLoader();
@@ -107,6 +110,7 @@ function quizLoader() {
     c_ans.addEventListener("click", function () {
       if (c_ans.innerText === quizQNA[questionCounter].correct) {
         console.log("you did it");
+        points += 10;
       } else console.log("you're wrong");
       questionCounter++;
       quizLoader();
@@ -114,12 +118,13 @@ function quizLoader() {
     d_ans.addEventListener("click", function () {
       if (d_ans.innerText === quizQNA[questionCounter].correct) {
         console.log("you did it");
+        points += 10;
       } else console.log("you're wrong");
       questionCounter++;
       quizLoader();
     })
   } else{
     questionEl.innerText = "Done!"
-    answerEl.innerHTML = ""
+    answerEl.innerHTML = points + "/50" 
   }
 }
