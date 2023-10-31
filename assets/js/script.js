@@ -1,6 +1,5 @@
 var quizQNA = [
   {
-
     question:
       "The condition if an if/else statement is enclosed with ________.",
     a: "1. quotes",
@@ -45,13 +44,13 @@ var answerEl = document.getElementById("answers");
 var paraEl = document.getElementById("info");
 var maxTime = 10000;
 var points = 0;
-var mainSection = document.getElementById('main-section');
-var messageEl = document.getElementById("message")
+var mainSection = document.getElementById("main-section");
+var messageEl = document.getElementById("message");
 
 // function that occurs after pressing start button
 startButtonEl.addEventListener("click", function () {
   if (questionCounter < quizQNA.length) {
-    mainSection.classList.add('container');
+    mainSection.classList.add("container");
     quizLoader();
     setInterval(() => {
       if (maxTime > 0 && questionCounter < quizQNA.length) {
@@ -82,34 +81,34 @@ function quizLoader() {
     a_ans.className = "answers-button";
     a_ans.style.width = "25rem";
     a_ans.style.height = "5rem";
-    a_ans.style.display = "flex"
-    a_ans.style.alignItems = "center"
+    a_ans.style.display = "flex";
+    a_ans.style.alignItems = "center";
 
-    var b_ans = document.getElementById("answer2"); 4
+    var b_ans = document.getElementById("answer2");
+    4;
     b_ans.innerText = quizQNA[questionCounter].b;
     b_ans.className = "answers-button";
     b_ans.style.width = "25rem";
     b_ans.style.height = "5rem";
-    b_ans.style.display = "flex"
-    b_ans.style.alignItems = "center"
+    b_ans.style.display = "flex";
+    b_ans.style.alignItems = "center";
 
     var c_ans = document.getElementById("answer3");
     c_ans.innerText = quizQNA[questionCounter].c;
     c_ans.className = "answers-button";
     c_ans.style.width = "25rem";
     c_ans.style.height = "5rem";
-    c_ans.style.display = "flex"
-    c_ans.style.alignItems = "center"
+    c_ans.style.display = "flex";
+    c_ans.style.alignItems = "center";
 
     var d_ans = document.getElementById("answer4");
     d_ans.innerText = quizQNA[questionCounter].d;
     d_ans.className = "answers-button";
     d_ans.style.width = "25rem";
     d_ans.style.height = "5rem";
-    d_ans.style.display = "flex"
-    d_ans.style.alignItems = "center"
+    d_ans.style.display = "flex";
+    d_ans.style.alignItems = "center";
 
-    
     // if a button is clicked, it'll move on to the next question
 
     a_ans.addEventListener("click", function () {
@@ -127,7 +126,6 @@ function quizLoader() {
       } else console.log("you're wrong");
       questionCounter++;
       quizLoader();
-
     });
     c_ans.addEventListener("click", function () {
       if (c_ans.innerText === quizQNA[questionCounter].correct) {
@@ -136,7 +134,6 @@ function quizLoader() {
       } else console.log("you're wrong");
       questionCounter++;
       quizLoader();
-
     });
     d_ans.addEventListener("click", function () {
       if (d_ans.innerText === quizQNA[questionCounter].correct) {
@@ -146,9 +143,8 @@ function quizLoader() {
       questionCounter++;
       quizLoader();
     });
-    
   } else {
     questionEl.innerText = "Done!";
-    answerEl.innerHTML = points + "/50";
+    answerEl.innerHTML = points + "/40";
   }
 }
