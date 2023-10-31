@@ -1,3 +1,4 @@
+// An array of objects that will be called as a counter updates
 var quizQNA = [
   {
     question:
@@ -35,6 +36,7 @@ var quizQNA = [
     correct: "4. console.log",
   },
 ];
+// Declaring my variables 
 
 var startButtonEl = document.getElementById("startQuizBtn");
 var timerEl = document.getElementById("timer");
@@ -52,6 +54,7 @@ startButtonEl.addEventListener("click", function () {
   if (questionCounter < quizQNA.length) {
     mainSection.classList.add("container");
     quizLoader();
+    // Every second it'll subtract 1 from the timer if there are questions left 
     setInterval(() => {
       if (maxTime > 0 && questionCounter < quizQNA.length) {
         timerEl.innerText = "Time: " + maxTime;
